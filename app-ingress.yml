@@ -12,12 +12,12 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
 
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:970378220457:certificate/aad8e284-b7e2-4e0d-8426-ebaf59fafb1d # Replace with your ACM certificate ARN
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:<REGION>:<AWS_ACCOUNT_ID>:certificate/<CERTIFICATE_ID> # Replace with your ACM certificate ARN
     alb.ingress.kubernetes.io/ssl-redirect: '443'
 spec:
   ingressClassName: alb
   rules:
-    - host: iphone.harishshetty.xyz
+    - host: iphone.example.com
       http:
         paths:
           - path: /
